@@ -51,19 +51,19 @@ services:
       dev-env:
 
 
-  mysql5:
-    image: mysql:${MYSQL5_VERSION}
-    container_name: mysql5-shellbox
+  mysql:
+    image: mysql:${MYSQL_VERSION}
+    container_name: mysql-shellbox
     ports:
-      - "${MYSQL5_HOST_PORT}:3306"
+      - "${MYSQL_HOST_PORT}:3306"
     volumes:
-      - ${MYSQL5_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
-      - ${DATA_DIR}/mysql5:/var/lib/mysql/:rw
+      - ${MYSQL_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
+      - ${DATA_DIR}/mysql:/var/lib/mysql/:rw
     restart: always
     networks:
-      dev-env:
+      - default
     environment:
-      MYSQL_ROOT_PASSWORD: "${MYSQL5_ROOT_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       TZ: "$TZ"
 
   redis:
