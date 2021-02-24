@@ -23,7 +23,7 @@ services:
       TZ: "$TZ"
     restart: always
     networks:
-      dev-env:
+      - default
 
   php:
     build:
@@ -48,7 +48,7 @@ services:
     cap_add:
       - SYS_PTRACE
     networks:
-      dev-env:
+      - default
 
 
   mysql:
@@ -79,8 +79,7 @@ services:
     environment:
       TZ: "$TZ"
     networks:
-      dev-env:
+      - default
 
 networks:
-  dev-env:
-    driver: bridge
+  default:
