@@ -1,3 +1,12 @@
+shellbox-api所需环境docker，修改自dnmp
+
+docker-compose up前：
+
+- 配置修改确保自己知道MySQL、Redis密码
+- 配置修改nginx配置文件，域名，SSL证书
+- .env的SOURCE_DIR配置
+
+
 DNMP（Docker + Nginx + MySQL + PHP7/5 + Redis）是一款全功能的**LNMP一键安装程序**。
 
 > 使用前最好提前阅读一遍[目录](#目录)，以便快速上手，遇到问题也能及时排除。交流QQ一群：**572041090（已满）**，二群：**300723526**。
